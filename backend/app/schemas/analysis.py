@@ -6,8 +6,13 @@ class AnalysisRequest(BaseModel):
 
 
 class AnalysisResponse(BaseModel):
+    id: str
+    category: str
+    confidence: float
+
     status: str
     summary: str
     severity: str
+
     possible_causes: list[str]
     suggested_commands: list[str]

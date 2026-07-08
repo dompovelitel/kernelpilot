@@ -1,9 +1,12 @@
 RULES = [
     {
+        "id": "NGINX_START_FAILED",
+        "category": "systemd",
         "pattern": "failed to start nginx",
         "status": "warning",
-        "summary": "The nginx service failed to start.",
         "severity": "medium",
+        "confidence": 0.99,
+        "summary": "The nginx service failed to start.",
         "possible_causes": [
             "Configuration error",
             "Port 80 is already in use",
@@ -16,10 +19,13 @@ RULES = [
         ]
     },
     {
+        "id": "OUT_OF_MEMORY",
+        "category": "memory",
         "pattern": "out of memory",
         "status": "critical",
-        "summary": "System ran out of memory.",
         "severity": "high",
+        "confidence": 0.98,
+        "summary": "System ran out of memory.",
         "possible_causes": [
             "RAM exhausted",
             "Memory leak",
@@ -32,10 +38,13 @@ RULES = [
         ]
     },
     {
+        "id": "PERMISSION_DENIED",
+        "category": "permissions",
         "pattern": "permission denied",
         "status": "warning",
-        "summary": "Permission denied.",
         "severity": "medium",
+        "confidence": 0.97,
+        "summary": "Permission denied.",
         "possible_causes": [
             "Missing permissions",
             "Wrong file owner",
@@ -48,10 +57,13 @@ RULES = [
         ]
     },
     {
+        "id": "DISK_FULL",
+        "category": "storage",
         "pattern": "no space left on device",
         "status": "critical",
-        "summary": "Disk is full.",
         "severity": "high",
+        "confidence": 0.99,
+        "summary": "Disk is full.",
         "possible_causes": [
             "Filesystem is full",
             "Large log files",

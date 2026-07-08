@@ -8,6 +8,9 @@ def analyze_log(log: str) -> AnalysisResponse:
     for rule in RULES:
         if rule["pattern"] in log:
             return AnalysisResponse(
+                id=rule["id"],
+                category=rule["category"],
+                confidence=rule["confidence"],
                 status=rule["status"],
                 summary=rule["summary"],
                 severity=rule["severity"],
@@ -16,6 +19,9 @@ def analyze_log(log: str) -> AnalysisResponse:
             )
 
     return AnalysisResponse(
+        id="UNKNOWN",
+        category="unknown",
+        confidence=0.0,
         status="unknown",
         summary="No known issue detected.",
         severity="low",
